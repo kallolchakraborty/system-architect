@@ -60,6 +60,8 @@
 
   // Global routing and navigation state variables
   var routeMap = window.__ROUTE_MAP || {
+    '#installation-and-usage': 'content/installation-and-usage.json',
+    '#evaluation-benchmarks': 'content/evaluation-benchmarks.json',
     '#system-design-methodology': 'content/system-design-methodology.json',
     '#capacity-cheatsheet': 'content/capacity-cheatsheet.json',
     '#distributed-systems-and-db': 'content/distributed-systems-and-db.json',

@@ -1,5 +1,33 @@
 window.SITE_CONTENT = [
   {
+    "id": "installation-and-usage",
+    "title": "Installation & How to Use",
+    "category": "Getting Started",
+    "description": "Step-by-step instructions for installing and activating the System Architect skill in your AI Agent workspace.",
+    "sections": [
+      {
+        "title": "Skill Installation (Symlink)",
+        "description": "<div class=\"bg-slate-900 rounded-xl p-5 border border-slate-800 text-slate-100 font-mono text-sm shadow-md my-4\"><div class=\"text-xs text-indigo-400 mb-2 font-bold\"># Terminal / Command Line</div><div class=\"text-slate-400\"># 1. Clone system-architect repository</div><div>git clone https://github.com/kallolchakraborty/system-architect.git</div><br/><div class=\"text-slate-400\"># 2. Symlink into Gemini / Antigravity Agent skills folder</div><div>ln -s \"$(pwd)/system-architect\" ~/.gemini/config/skills/system-architect</div></div>"
+      },
+      {
+        "title": "Sample Activation Prompt",
+        "description": "<div class=\"p-5 bg-indigo-50/50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 rounded-xl my-4\"><h4 class=\"font-bold text-indigo-900 dark:text-indigo-200 mb-2\">Example User Request</h4><p class=\"text-slate-700 dark:text-slate-300 leading-relaxed text-sm\">\"Act as a Principal System Architect. Design a real-time Collaborative Document Editing Platform (like Google Docs) supporting 10M DAU and 100k concurrent active documents. Follow the 4-Step System Design process with full capacity math, WebSocket sync, CRDTs, storage layers, and a complete trade-off matrix.\"</p></div>"
+      }
+    ]
+  },
+  {
+    "id": "evaluation-benchmarks",
+    "title": "Evaluation Harness & Benchmarks",
+    "category": "Getting Started",
+    "description": "Enterprise evaluation suite metrics, trigger recall accuracy, and quality test results.",
+    "sections": [
+      {
+        "title": "Quality Scorecard (300 / 300 pts)",
+        "description": "<div class=\"grid grid-cols-1 md:grid-cols-3 gap-4 my-4\"><div class=\"p-4 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-800\"><div class=\"text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-1\">Trigger Recall</div><div class=\"text-2xl font-extrabold text-slate-900 dark:text-white\">100% (F1 = 1.0)</div><p class=\"text-xs text-slate-600 dark:text-slate-400 mt-2\">Perfect intent recognition for architectural requests.</p></div><div class=\"p-4 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-800\"><div class=\"text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1\">Domain Modules</div><div class=\"text-2xl font-extrabold text-slate-900 dark:text-white\">15 / 15 (100%)</div><p class=\"text-xs text-slate-600 dark:text-slate-400 mt-2\">Complete coverage across CAP, DBs, caching &amp; security.</p></div><div class=\"p-4 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-slate-200 dark:border-slate-800\"><div class=\"text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 mb-1\">Rigor Suite</div><div class=\"text-2xl font-extrabold text-slate-900 dark:text-white\">300 / 300 pts</div><p class=\"text-xs text-slate-600 dark:text-slate-400 mt-2\">AST-verified code &amp; zero duplicate prompt instructions.</p></div></div>"
+      }
+    ]
+  },
+  {
     "id": "system-design-methodology",
     "title": "System Architect — Industry-Grade 4-Step Methodology",
     "phase": 1,
