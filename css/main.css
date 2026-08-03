@@ -25,7 +25,7 @@ html.dark {
 }
 html { font-size: 15px; }
 .max-w-8xl { max-width: 100rem !important; }
-html, body, div, span, applet, object, iframe,
+html, body, div, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -37,15 +37,36 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video, input, button, select, textarea {
+time, mark, audio, video, input, button, select, textarea,
+span:not(.material-symbols-outlined) {
   font-family: 'Ubuntu', sans-serif !important;
 }
 
+span.material-symbols-outlined,
+button.material-symbols-outlined,
+i.material-symbols-outlined,
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  line-height: 1 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+  direction: ltr !important;
 }
-.font-mono, pre code, code {
-  font-family: 'JetBrains Mono', monospace !important;
+
+.btn-primary {
+  background-color: #4F46E5 !important;
+  color: #FFFFFF !important;
+}
+.btn-primary * {
+  color: #FFFFFF !important;
+}
+.btn-primary:hover {
+  background-color: #4338CA !important;
 }
 a { text-decoration: none; }
 button, input { border: none; outline: none; }
