@@ -1,0 +1,16 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor directories
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python / Temp files
+__pycache__/
+*.pyc
+*.tmp
+*.log
