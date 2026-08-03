@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://kallolchakraborty.github.io/cds-bytes/sitemap.xml
