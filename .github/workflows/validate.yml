@@ -6,19 +6,30 @@ on:
   pull_request:
     branches: [ main, master ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
+    name: Validate and Evaluate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Install dependencies
-        run: python -m pip install pyyaml
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
 
       - name: Run Skill Validation Script
         run: python scripts/validate_skill.py
+        
+      - name: Run Full Evaluation Harness
+        run: python scripts/run_evals.py

@@ -1,0 +1,7 @@
+{
+  "id": "scalability-patterns",
+  "title": "Scalability Patterns & Caching Strategies",
+  "category": "Architecture Modules",
+  "description": "Caching topologies, invalidate patterns, load balancing algorithms, rate limiting, and asynchronous processing.",
+  "content": "# Scalability Patterns & Caching Strategies\n\n## 1. Caching Topologies & Invalidation\n- **Cache-Aside (Lazy Loading)**: Application reads cache; on miss, loads from DB and updates cache.\n- **Write-Through**: Application writes to cache; cache synchronously writes to DB.\n- **Write-Behind (Write-Back)**: Application writes to cache; cache asynchronously flushes to DB in batches.\n- **Refresh-Ahead**: Cache pre-emptively refreshes keys before TTL expiration based on access patterns.\n\n## 2. Load Balancing & Reverse Proxy\n- **Layer 4 (L4) Load Balancing**: Operates at TCP/UDP level. Fast, low overhead.\n- **Layer 7 (L7) Load Balancing**: Operates at HTTP/HTTPS level. Enables URL routing, SSL termination, rate-limiting."
+}

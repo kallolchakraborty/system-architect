@@ -1,0 +1,7 @@
+{
+  "id": "distributed-systems-and-db",
+  "title": "Distributed Systems & Database Architecture",
+  "category": "Architecture Modules",
+  "description": "Deep dive into SQL vs NoSQL, CAP theorem, replication topologies, sharding strategies, and transactions.",
+  "content": "# Distributed Systems & Database Architecture\n\n## 1. Relational vs. NoSQL Paradigm Matrix\n\n| Attribute | Relational (RDBMS) | NoSQL (Key-Value, Document, Wide-Column, Graph) |\n|---|---|---|\n| Data Structure | Normalized tables with defined schemas | Unstructured/semi-structured, key-value, BSON, graph nodes |\n| Transactions | Full ACID guarantees | Eventual consistency, BASE (Basically Available, Soft-state, Eventual consistency) |\n| Scaling | Vertical (scale-up); Read replicas, Sharding for horizontal | Built-in horizontal partitioning (sharding) |\n\n## 2. Partitioning & Sharding Strategies\n- **Range-Based Partitioning**: Maps continuous key ranges to nodes. Vulnerable to hot spots.\n- **Hash-Based Partitioning**: Hashes partition key modulo N. Requires full resharding on node addition.\n- **Consistent Hashing**: Hashes keys & nodes onto a 2^32 ring. Virtual nodes ensure uniform key distribution with minimal key movement on cluster topology changes."
+}
