@@ -3,5 +3,10 @@
   "title": "Resilience, Security & Operability",
   "category": "Architecture Modules",
   "description": "Circuit breakers, rate limiting, token buckets, TLS termination, zero-trust security, and observability stacks.",
-  "content": "# Resilience, Security & Operability\n\n## 1. Resilience & Fault Tolerance\n- **Circuit Breaker Pattern**: Monitors error rates to prevent cascading failure (Closed -> Open -> Half-Open).\n- **Bulkheading**: Isolates resources (thread pools, connection pools) so failures in one service do not drain capacity.\n- **Graceful Degradation**: Fallback to cached or read-only data when upstream services fail.\n\n## 2. Security Fundamentals\n- **Rate Limiting**: Token Bucket, Leaky Bucket, Sliding Window Counter.\n- **Identity & Auth**: OAuth 2.0 / OIDC, JWTs, Mutual TLS (mTLS) for microservices inter-service auth.\n- **Zero-Trust Network Architecture**: Never trust, always verify every request regardless of location."
+  "sections": [
+    {
+      "title": "Fault Tolerance & Resilience Patterns",
+      "description": "<div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 my-4\"><div class=\"p-4 bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 rounded-xl\"><h4 class=\"font-bold text-slate-900 dark:text-white mb-1\">Circuit Breaker</h4><p class=\"text-xs text-slate-600 dark:text-slate-400 leading-relaxed\">Prevents cascading failures by opening circuit when error thresholds exceed limit (Closed ➔ Open ➔ Half-Open).</p></div><div class=\"p-4 bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 rounded-xl\"><h4 class=\"font-bold text-slate-900 dark:text-white mb-1\">Bulkheading</h4><p class=\"text-xs text-slate-600 dark:text-slate-400 leading-relaxed\">Isolates thread/connection pools so failures in one downstream service do not drain total application capacity.</p></div></div>"
+    }
+  ]
 }
