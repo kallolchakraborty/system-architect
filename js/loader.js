@@ -147,6 +147,68 @@
     return attempt(1);
   }
 
+  function formatMarkdownToHtml(markdownText) {
+    if (!markdownText) return '';
+    if (typeof marked !== 'undefined' && typeof marked.parse === 'function') {
+      try {
+        return marked.parse(markdownText);
+      } catch(e) {
+        console.warn('marked.parse failed, using fallback:', e);
+      }
+    }
+    // Fail-safe Markdown to HTML formatter
+    var blocks = markdownText.split(/\n\n+/);
+    var htmlBlocks = blocks.map(function(block) {
+      block = block.trim();
+      if (!block) return '';
+      if (block.startsWith('# ')) {
+        return '<h1 class="text-2xl font-bold mt-6 mb-3 text-slate-900 dark:text-white border-b pb-2 border-slate-200 dark:border-slate-800">' + block.substring(2) + '</h1>';
+      }
+      if (block.startsWith('## ')) {
+        return '<h2 class="text-xl font-bold mt-6 mb-3 text-slate-900 dark:text-white border-b pb-1 border-slate-200 dark:border-slate-800">' + block.substring(3) + '</h2>';
+      }
+      if (block.startsWith('### ')) {
+        return '<h3 class="text-lg font-semibold mt-4 mb-2 text-indigo-600 dark:text-indigo-400">' + block.substring(4) + '</h3>';
+      }
+      if (block.startsWith('```')) {
+        var code = block.replace(/^```[a-z]*\n?/, '').replace(/\n?```$/, '');
+        var escapedCode = code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return '<pre class="bg-slate-900 text-slate-100 p-4 rounded-xl my-4 overflow-x-auto font-mono text-sm"><code>' + escapedCode + '</code></pre>';
+      }
+      if (block.startsWith('- ')) {
+        var items = block.split(/\n\- /).map(function(item) {
+          var text = item.replace(/^- /, '').trim();
+          text = formatInlineMarkdown(text);
+          return '<li class="mb-1 text-slate-700 dark:text-slate-300">' + text + '</li>';
+        }).join('');
+        return '<ul class="list-disc ml-6 mb-4 space-y-1">' + items + '</ul>';
+      }
+      if (block.startsWith('|')) {
+        var rows = block.split('\n');
+        var tableHtml = '<div class="overflow-x-auto my-4"><table class="min-w-full border border-slate-200 dark:border-slate-800 text-sm rounded-lg overflow-hidden">';
+        rows.forEach(function(row, idx) {
+          if (row.includes('---')) return;
+          var cols = row.split('|').filter(function(c, i, a) { return i > 0 && i < a.length - 1; });
+          var tag = idx === 0 ? 'th' : 'td';
+          var cellClass = idx === 0 ? 'bg-slate-100 dark:bg-slate-800 font-semibold text-slate-900 dark:text-white px-3 py-2 border-b border-slate-200 dark:border-slate-800' : 'px-3 py-2 border-b border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300';
+          tableHtml += '<tr>' + cols.map(function(c) { return '<' + tag + ' class="' + cellClass + '">' + formatInlineMarkdown(c.trim()) + '</' + tag + '>'; }).join('') + '</tr>';
+        });
+        tableHtml += '</table></div>';
+        return tableHtml;
+      }
+      return '<p class="mb-4 text-slate-700 dark:text-slate-300 leading-relaxed">' + formatInlineMarkdown(block) + '</p>';
+    });
+    return htmlBlocks.join('\n');
+  }
+
+  function formatInlineMarkdown(text) {
+    return text
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-slate-900 dark:text-white">$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
+      .replace(/`([^`]+)`/g, '<code class="bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 px-1.5 py-0.5 rounded font-mono text-xs">$1</code>');
+  }
+
   function renderContent(data, hash) {
     if (!main) return;
     var title = data.title || data.id || hash.replace('#', '');
@@ -156,11 +218,7 @@
     // Build sections HTML
     var sectionsHtml = '';
     if (data.content) {
-      if (typeof marked !== 'undefined' && typeof marked.parse === 'function') {
-        sectionsHtml = marked.parse(data.content);
-      } else {
-        sectionsHtml = data.content;
-      }
+      sectionsHtml = formatMarkdownToHtml(data.content);
     } else if (sections.length > 0) {
       sectionsHtml = sections.map(function(s) {
         var sTitle = s.title || '';
