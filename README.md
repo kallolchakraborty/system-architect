@@ -1,5 +1,6 @@
 # System Architect — Enterprise Distributed Systems & Architectural Skill Engine
 
+[![Author: Kallol Chakraborty](https://img.shields.io/badge/Author-Kallol%20Chakraborty-blue.svg?style=flat-square)](https://github.com/kallolchakraborty)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Status: Production-Ready](https://img.shields.io/badge/Status-Production--Ready-brightgreen.svg?style=flat-square)]()
 [![Type: AI Agent Skill Engine](https://img.shields.io/badge/Type-AI%20Agent%20Skill%20Engine-purple.svg?style=flat-square)]()

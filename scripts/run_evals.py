@@ -24,7 +24,7 @@ Suites:
   Suite 9  — Readability & Cognitive Load Estimation
   Suite 10 — Token Budget & Context Efficiency
 
-Author: Antigravity Eval Engine
+Author: Kallol Chakraborty
 """
 
 import sys

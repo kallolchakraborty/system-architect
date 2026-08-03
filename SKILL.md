@@ -2,7 +2,7 @@
 name: system-architect
 description: "Use when designing scalable systems, distributed architectures, or complex software solutions. Full industry-grade methodology: requirements -> capacity -> HLD -> component design -> scale."
 version: 1.0.0
-author: Antigravity (based on donnemartin/system-design-primer)
+author: Kallol Chakraborty
 license: MIT
 metadata:
   hermes:
