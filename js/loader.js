@@ -467,13 +467,34 @@
       renderContent(cached, hash);
       return;
     }
+
+    var targetId = hash.replace('#', '');
+    var inlineData = null;
+    if (window.SITE_CONTENT && Array.isArray(window.SITE_CONTENT)) {
+      inlineData = window.SITE_CONTENT.find(function(item) { return item.id === targetId; });
+    }
+
+    if (inlineData) {
+      contentCache[hash] = inlineData;
+      renderContent(inlineData, hash);
+      return;
+    }
+
     fetchWithRetry(contentPath, 3)
       .then(function(data) {
         contentCache[hash] = data;
         renderContent(data, hash);
       })
       .catch(function(err) {
-        console.error('Failed to load content:', err);
+        console.warn('Fetch failed for ' + contentPath + ', checking SITE_CONTENT...', err);
+        if (window.SITE_CONTENT && Array.isArray(window.SITE_CONTENT)) {
+          var found = window.SITE_CONTENT.find(function(item) { return item.id === targetId; });
+          if (found) {
+            contentCache[hash] = found;
+            renderContent(found, hash);
+            return;
+          }
+        }
         main.innerHTML = errorHTML;
         var retryBtn = document.getElementById('retryBtn');
         if (retryBtn) {
