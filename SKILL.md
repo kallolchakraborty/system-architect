@@ -144,6 +144,8 @@ For each component, justify its presence. If you include a cache, say WHY (read-
 
 After HLD, dive into the most critical 2-3 components. Use the component reference below.
 
+**Completion criterion**: Deep-dives cover database schemas, API contracts, failover recovery mechanisms, and a complete trade-off matrix contrasting chosen technologies with rejected alternatives.
+
 ---
 
 ## Component Reference
