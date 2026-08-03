@@ -2,7 +2,7 @@
 
 ## Core Conversion Table
 
-```
+```text
 Time conversions:
   1 day   = 86,400 seconds  (~100K)
   1 month = 2,500,000 seconds (~2.5M)
@@ -15,7 +15,7 @@ Time conversions:
 
 ## Storage Size Reference
 
-```
+```text
 Data sizes:
   1 char = 1 byte
   1 UUID = 16 bytes (128-bit) or 36 chars as string
@@ -40,7 +40,7 @@ Typical record sizes:
 
 ### Template A — Write-heavy (IoT, logging, events)
 
-```
+```text
 Writes/sec = daily_writes / 86400
            = monthly_writes / 2.5M
 
@@ -54,7 +54,7 @@ Inbound bandwidth = record_KB x writes/sec  [KB/s]
 
 ### Template B — Read-heavy (social feed, search, catalog)
 
-```
+```text
 Reads/sec = monthly_reads / 2.5M
 Read:write ratio -> state it explicitly (e.g., 100:1)
 
@@ -68,7 +68,7 @@ Cache hit rate target: >= 90% for read-heavy systems
 
 ### Template C — Media upload (video, images)
 
-```
+```text
 Storage/sec = upload_size_MB x uploads/sec  [MB/s]
 CDN outbound = avg_file_MB x downloads/sec  [MB/s]
 
@@ -80,7 +80,7 @@ Encoding pipeline:
 
 ## Latency Numbers Every Engineer Should Know
 
-```
+```text
 Operation                    Latency         Notes
 --------------------------   -------------   ----------------------------
 L1 cache reference           0.5 ns
@@ -107,7 +107,7 @@ Send packet CA -> Netherlands -> CA  150 ms
 
 ## Availability Math
 
-```
+```text
 Availability = uptime / (uptime + downtime)
 
 Components in SERIES (AND): A_total = A1 x A2 x A3 x ...
@@ -121,7 +121,7 @@ Lesson: add redundancy to eliminate sequential failure paths.
 
 ## Throughput Capacity Limits (Approximate)
 
-```
+```text
 Single server (modern, well-tuned):
   Web requests (stateless, small payload):  ~10,000-50,000 RPS
   Database queries (indexed reads):         ~10,000 QPS
@@ -142,7 +142,7 @@ Disk:
 
 ## Example: Twitter-scale Estimation
 
-```
+```text
 Given:
   100M active users
   500M tweets/day
@@ -173,7 +173,7 @@ Architecture conclusion:
 
 ## Example: URL Shortener Estimation
 
-```
+```text
 Given:
   100M URLs created/month
   10B URL redirects/month (100:1 read:write)
