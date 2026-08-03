@@ -63,7 +63,7 @@ Ask or state the following before drawing anything:
 
 Run these calculations BEFORE designing. They expose which tier will bottleneck first.
 
-```
+```text
 --- Throughput ---
 Writes/sec  = (writes/month) / 2.5M
 Reads/sec   = (reads/month)  / 2.5M
@@ -82,30 +82,7 @@ Cache_RAM = hot_data_fraction x total_dataset_size
             (20% of data serves 80% of traffic -- Pareto)
 ```
 
-**Reference latency numbers (memorize):**
-
-| Operation | Latency |
-|---|---|
-| L1 cache reference | 0.5 ns |
-| L2 cache reference | 7 ns |
-| RAM read (64B) | ~100 ns |
-| SSD random read | ~100 us |
-| HDD seek | 10 ms |
-| Network round-trip (same DC) | 0.5 ms |
-| Network round-trip (cross-continent) | 150 ms |
-| Sequential RAM read (1 MB) | ~250 us |
-| Sequential SSD read (1 MB) | ~1 ms |
-| Sequential HDD read (1 MB) | ~20 ms |
-
-**Powers of two (storage quick reference):**
-
-| Power | Approx value | Name |
-|---|---|---|
-| 10 | 1 thousand | 1 KB |
-| 20 | 1 million | 1 MB |
-| 30 | 1 billion | 1 GB |
-| 40 | 1 trillion | 1 TB |
-| 50 | 1 quadrillion | 1 PB |
+> **Latency & capacity quick reference**: See `references/capacity-cheatsheet.md` for the complete latency numbers table (L1 cache → cross-continent), power-of-two storage reference, and throughput conversion constants.
 
 **Completion criterion**: You have explicit numbers for writes/sec, reads/sec, storage/year, peak RPS, and bandwidth before proceeding.
 
@@ -115,7 +92,7 @@ Cache_RAM = hot_data_fraction x total_dataset_size
 
 Produce a component diagram covering these layers in order:
 
-```
+```text
 [Client] -> [DNS/CDN] -> [Load Balancer] -> [API Gateway / Web Server]
          -> [Application Services] -> [Cache Layer] -> [Database Layer]
          -> [Object Storage] -> [Message Queue] -> [Async Workers]
@@ -206,6 +183,8 @@ After HLD, dive into the most critical 2-3 components. Use the component referen
 
 ---
 
+## Component Reference — Caching, Queues & Network
+
 ### Caching
 
 **Golden rule**: Cache data that is read frequently and changes infrequently.
@@ -251,6 +230,8 @@ After HLD, dive into the most critical 2-3 components. Use the component referen
 
 ---
 
+## Component Reference — Networking, Availability & Architecture
+
 ### Networking & Communication
 
 | Protocol | Properties | Use when |
@@ -274,7 +255,7 @@ After HLD, dive into the most critical 2-3 components. Use the component referen
 | 99.999% (five 9s) | 5.26 minutes | 26.3 seconds |
 
 **Availability in parallel (redundancy):**
-```
+```text
 Overall = 1 - (1 - A_foo) * (1 - A_bar)
 Two 99.9% components in parallel -> 99.9999% combined
 ```
@@ -378,7 +359,7 @@ Incrementally migrate monolith to microservices: route new traffic to new servic
 
 Structure every system design response as:
 
-```
+```text
 ## System: [Name]
 
 ### 1. Requirements
@@ -409,33 +390,33 @@ Structure every system design response as:
 
 ## Common Pitfalls
 
-1. **Jumping to components before requirements.** Without scale numbers, every technology choice is a guess. Run capacity math first.
-2. **Over-engineering for day-1 scale.** Start simplest architecture that meets SLA; identify bottlenecks; evolve iteratively.
-3. **Forgetting the SPOF audit.** Walk every component: what happens when it fails? Add redundancy only where downtime violates SLA.
-4. **Picking a database for brand-name reasons.** Access pattern + consistency requirement + scale target -> then pick technology.
-5. **Ignoring the consistency model.** State which operations are eventually consistent and which must be strongly consistent.
-6. **Cache invalidation hand-waving.** State: when does cache entry get invalidated? Who owns it? What is the failure mode?
-7. **No back-pressure in async pipelines.** Define queue depth limits and producer throttling behavior.
-8. **Microservices as default.** A modular monolith is often right until you have proven scale and team-size justification.
-9. **No observability plan.** Every production system needs metrics (Prometheus), logs (ELK), and traces (Jaeger/Zipkin). Name them.
-10. **Underestimating data gravity.** Data is hard to move once written. State the data model and access patterns explicitly before committing to a data store.
+1. **Never jump to components before requirements.** Without explicit scale numbers, every technology choice is a guess. Do NOT draw architecture until capacity math is complete.
+2. **Do not over-engineer for day-1 scale.** Start with the simplest architecture that meets the SLA; identify bottlenecks; evolve iteratively. Avoid distributed systems complexity until proven necessary.
+3. **Never skip the SPOF audit.** Walk every component: what happens when it fails? Do NOT ship a design where a single component failure violates the availability SLA without a documented failover plan.
+4. **Never pick a database for brand-name reasons.** Access pattern + consistency requirement + scale target → then pick technology. Do not reverse this order.
+5. **Never hand-wave the consistency model.** State explicitly which operations are eventually consistent and which must be strongly consistent. Do NOT leave consistency unspecified.
+6. **Do not hand-wave cache invalidation.** State precisely: when does a cache entry get invalidated? Who owns the invalidation? What is the failure mode on cache miss thundering herd?
+7. **Never omit back-pressure in async pipelines.** Define queue depth limits and producer throttling behaviour. An unbounded queue is a ticking time bomb under load.
+8. **Avoid microservices as default.** A modular monolith is often the correct choice until you have proven scale and team-size justification. Do NOT adopt microservices for social proof.
+9. **Never ship a design without an observability plan.** Every production system needs metrics (Prometheus/Grafana), structured logs (ELK), and distributed traces (Jaeger). Name them explicitly.
+10. **Never underestimate data gravity.** Data is hard to move once written at scale. State the data model and access patterns before committing to a data store; do NOT change storage engines post-production lightly.
 
 ---
 
 ## Verification Checklist
 
 - [ ] Requirements stated with explicit scale numbers (RPS, storage, latency SLA)
-- [ ] Capacity calculations completed before component selection
-- [ ] Every component has a stated justification (not just listed)
+- [ ] Capacity calculations completed before any component is selected
+- [ ] Every component has a stated technical justification (not just listed)
 - [ ] Every component failure mode addressed (SPOF eliminated or tolerated with rationale)
-- [ ] Database choice matches consistency requirement + access pattern + scale
-- [ ] Cache strategy named (cache-aside / write-through / write-behind) with invalidation plan
-- [ ] Async queues have back-pressure mechanism defined
-- [ ] Security layers named at each boundary (auth, encryption, rate limiting)
-- [ ] CAP theorem position stated for each data store
+- [ ] Database choice matches consistency requirement, access pattern, and scale target
+- [ ] Cache strategy named (cache-aside / write-through / write-behind) with explicit invalidation plan
+- [ ] Async queues have back-pressure mechanism and bounded depth defined
+- [ ] Security layers named at each boundary (auth, TLS, encryption at rest, rate limiting)
+- [ ] CAP theorem position stated explicitly for each data store
 - [ ] Trade-off table produced for each major design decision
 - [ ] Bottleneck analysis covers at least 3 future scaling issues with mitigation plans
-- [ ] Observability plan named (metrics, logs, traces tooling)
+- [ ] Observability plan named explicitly (metrics tool, logging tool, tracing tool)
 
 ---
 
