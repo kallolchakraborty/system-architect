@@ -3,7 +3,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Status: Production-Ready](https://img.shields.io/badge/Status-Production--Ready-brightgreen.svg)]()
 [![Type: AI Agent Skill Engine](https://img.shields.io/badge/Type-AI%20Agent%20Skill%20Engine-purple.svg)]()
-[![Validation: Passing](https://img.shields.io/badge/CI%2FCD%20Validation-Passing-success.svg)]()
+[![Eval Score: 100%](https://img.shields.io/badge/Eval%20Score-300%2F300%20%28100%25%29-brightgreen.svg)]()
+[![CI/CD Validation: Passing](https://img.shields.io/badge/CI%2FCD%20Validation-Passing-success.svg)]()
 
 > **The Definitive Blueprint for Distributed Systems Architecture.**  
 > Designed as an exhaustive, production-grade reference framework for Large Language Models (LLMs), Principal Software Architects, and AI Coding Agents. This repository encodes end-to-end distributed system design—from high-throughput back-of-the-envelope capacity calculations to low-level object-oriented patterns, database sharding strategies, API idempotency specs, and cloud-native compute choices.
@@ -31,7 +32,7 @@
 7. [Installation, CI/CD & Agent Integration Manual](#7-installation-cicd--agent-integration-manual)
    - [Global Agent Installation](#global-agent-installation)
    - [Workspace Integration](#workspace-integration)
-   - [Automated Skill Validation](#automated-skill-validation)
+   - [Automated Skill Validation & 10-Suite Evaluation Engine](#automated-skill-validation--10-suite-evaluation-engine)
    - [Prompt Blueprints for LLMs](#prompt-blueprints-for-llms)
 8. [License & Contribution Standards](#8-license--contribution-standards)
 
@@ -58,7 +59,8 @@ System Design Skill/
 │   └── workflows/
 │       └── validate.yml                 # CI/CD automated skill validation workflow
 ├── scripts/
-│   └── validate_skill.py                # Python validation script (frontmatter & reference links)
+│   ├── validate_skill.py                # Structural YAML & link validation script
+│   └── run_evals.py                     # v2.0 10-Suite Industry Evaluation Engine (300/300 Pts)
 ├── references/                          # Modular Knowledge Base (Progressive Disclosure)
 │   ├── capacity-cheatsheet.md           # Latency table, power-of-two reference, throughput formulas
 │   ├── core-components.md               # DB replication, sharding, CRDTs, DNS, Service Mesh, Observability
