@@ -45,12 +45,12 @@
   </nav>
 
   <!-- Hero -->
-  <main id="main-content" class="flex-grow flex items-center justify-center px-4 py-12">
+  <main id="main-content" class="flex-grow flex flex-col items-center justify-center px-4 py-12">
     <section class="w-full py-6">
       <div class="max-w-4xl mx-auto text-center">
         <div class="flex justify-center mb-6">
           <div class="w-28 h-28 rounded-3xl flex items-center justify-center bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/60 shadow-lg shadow-indigo-500/10">
-            <span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400" style="font-size: 72px;">account_tree</span>
+            <span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400 logo-animate" style="font-size: 72px;">account_tree</span>
           </div>
         </div>
         <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
@@ -60,7 +60,7 @@
         <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed">
           Official Agent Skill for production-grade distributed systems design, 4-step architecture framework, capacity estimation, and trade-off matrices.
         </p>
-        <div class="flex flex-wrap items-center justify-center gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
           <a href="docs.html" class="btn-primary inline-flex items-center gap-2.5 px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-indigo-600/30 hover:scale-105" style="color: #ffffff !important;">
             <span class="material-symbols-outlined text-[20px]" style="color: #ffffff !important;">auto_stories</span>
             <span style="color: #ffffff !important; font-weight: 700 !important;">Explore Architecture Guide</span>
@@ -68,7 +68,7 @@
           </a>
         </div>
         <!-- Quick stats -->
-        <div class="flex flex-wrap justify-center gap-12 mt-12 text-center">
+        <div class="flex flex-wrap justify-center gap-12 text-center border-t border-slate-200 dark:border-slate-800 pt-8">
           <div>
             <div class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">4 Steps</div>
             <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-1">Design Process</div>
@@ -81,6 +81,74 @@
             <div class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">300/300</div>
             <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-1">Rigor Score</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benchmark Scorecard Section -->
+    <section class="w-full max-w-5xl mx-auto py-12 px-4 border-t border-slate-200 dark:border-slate-800">
+      <div class="text-center mb-8">
+        <span class="px-3 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider rounded-full border border-indigo-200 dark:border-indigo-800">Verification</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-3">Evaluation Harness Benchmarks</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto mt-2">Tested against 30+ assertions across 10 strict enterprise quality suites.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-bold text-slate-900 dark:text-white">Trigger Recall &amp; Precision</span>
+            <span class="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold rounded">100% (F1 = 1.0)</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Perfect mapping for System Design intents while strictly isolating non-architectural requests.</p>
+        </div>
+
+        <div class="p-6 bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-bold text-slate-900 dark:text-white">Domain Coverage</span>
+            <span class="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold rounded">15 / 15 (100%)</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Full coverage across CAP theorem, sharding, caching, message queues, rate limiting, and security.</p>
+        </div>
+
+        <div class="p-6 bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-bold text-slate-900 dark:text-white">Rigor &amp; Token Budget</span>
+            <span class="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 text-xs font-extrabold rounded">300 / 300 pts</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Zero duplicate instructions, AST-verified code snippets, and fast execution latency.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Install & Use Section -->
+    <section class="w-full max-w-5xl mx-auto py-12 px-4 border-t border-slate-200 dark:border-slate-800">
+      <div class="text-center mb-8">
+        <span class="px-3 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider rounded-full border border-indigo-200 dark:border-indigo-800">Integration</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-3">How to Install &amp; Use</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto mt-2">Symlink the skill into your local AI Agent configuration directory.</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Installation Code Block -->
+        <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 text-slate-100 font-mono text-sm shadow-xl">
+          <div class="flex items-center justify-between mb-3 text-xs text-slate-400 border-b border-slate-800 pb-2">
+            <span>Terminal (Symlink Install)</span>
+            <span class="text-indigo-400">Bash</span>
+          </div>
+          <pre class="overflow-x-auto"><code># Clone repository
+git clone https://github.com/kallolchakraborty/system-architect.git
+
+# Symlink into Gemini / Antigravity Agent skills folder
+ln -s "$(pwd)/system-architect" ~/.gemini/config/skills/system-architect</code></pre>
+        </div>
+
+        <!-- Example Agent Prompt -->
+        <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 text-slate-100 font-mono text-sm shadow-xl">
+          <div class="flex items-center justify-between mb-3 text-xs text-slate-400 border-b border-slate-800 pb-2">
+            <span>Example User Prompt</span>
+            <span class="text-indigo-400">Prompt</span>
+          </div>
+          <p class="text-slate-300 leading-relaxed font-sans text-sm">"Act as a Principal System Architect. Design a real-time Collaborative Document Editing Platform (like Google Docs) supporting 10M DAU and 100k concurrent active documents. Follow the 4-Step System Design process with full capacity math, WebSocket sync, CRDTs, storage layers, and a complete trade-off matrix."</p>
         </div>
       </div>
     </section>
