@@ -1,33 +1,33 @@
 /* ========== Global: Scaled root ========== */
 :root {
-  --brand-primary: #E95420;
-  --brand-hover: #C34113;
-  --brand-light: rgba(233, 84, 32, 0.06);
-  --brand-lighter: rgba(233, 84, 32, 0.04);
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
+  --brand-primary: #4F46E5;
+  --brand-hover: #4338CA;
+  --brand-light: rgba(79, 70, 229, 0.08);
+  --brand-lighter: rgba(79, 70, 229, 0.04);
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
   --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --border-default: #e2e8f0;
+  --bg-secondary: #F8FAFC;
+  --border-default: #E2E8F0;
 }
 html.dark {
-  --brand-primary: #E95420;
-  --brand-hover: #C34113;
-  --brand-light: rgba(233, 84, 32, 0.15);
-  --brand-lighter: rgba(233, 84, 32, 0.1);
-  --text-primary: #E8E8E8;
-  --text-secondary: #A0A0A0;
-  --text-muted: #94a3b8;
-  --bg-primary: #0E1115;
-  --bg-secondary: #0F1115;
-  --border-default: rgba(255, 255, 255, 0.05);
+  --brand-primary: #818CF8;
+  --brand-hover: #6366F1;
+  --brand-light: rgba(129, 140, 248, 0.15);
+  --brand-lighter: rgba(129, 140, 248, 0.08);
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --bg-primary: #0F172A;
+  --bg-secondary: #1E293B;
+  --border-default: #334155;
 }
-html { font-size: 14.4px; }
+html { font-size: 15px; }
 .max-w-8xl { max-width: 100rem !important; }
 body,
 body *:not(.material-symbols-outlined):not(pre):not(code):not(pre *):not(code *):not(svg):not(svg *) {
-  font-family: 'Ubuntu', sans-serif !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
 }
 a { text-decoration: none; }
 button, input { border: none; outline: none; }
@@ -667,4 +667,22 @@ html.dark .hljs-operator { color: #f87171 !important; }
     transform: translateX(0) !important;
   }
 }
+
+/* ========== Markdown Content Typography & Tables ========== */
+#docs-dynamic-content { color: var(--text-primary); }
+#docs-dynamic-content h1 { font-size: 2.1rem; font-weight: 700; color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-default); padding-bottom: 0.5rem; }
+#docs-dynamic-content h2 { font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-top: 2rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-default); padding-bottom: 0.25rem; }
+#docs-dynamic-content h3 { font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+#docs-dynamic-content h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-top: 1.25rem; margin-bottom: 0.5rem; }
+#docs-dynamic-content p { font-size: 0.95rem; line-height: 1.65; color: var(--text-secondary); margin-bottom: 1rem; }
+#docs-dynamic-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.25rem; color: var(--text-secondary); }
+#docs-dynamic-content ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.25rem; color: var(--text-secondary); }
+#docs-dynamic-content li { margin-bottom: 0.4rem; line-height: 1.55; }
+#docs-dynamic-content table { width: 100%; border-collapse: collapse; margin-top: 1.25rem; margin-bottom: 1.5rem; border: 1px solid var(--border-default); border-radius: 8px; overflow: hidden; }
+#docs-dynamic-content th, #docs-dynamic-content td { padding: 10px 14px; border: 1px solid var(--border-default); text-align: left; font-size: 0.875rem; }
+#docs-dynamic-content th { background: var(--bg-secondary); font-weight: 600; color: var(--text-primary); }
+#docs-dynamic-content tr:nth-child(even) { background: var(--brand-lighter); }
+#docs-dynamic-content code:not(pre code) { background: var(--brand-light); color: var(--brand-primary); padding: 2px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 500; }
+#docs-dynamic-content blockquote { border-left: 4px solid var(--brand-primary); background: var(--brand-lighter); padding: 12px 16px; color: var(--text-secondary); border-radius: 0 8px 8px 0; margin-bottom: 1.25rem; font-style: normal; }
+#docs-dynamic-content hr { border: none; border-top: 1px solid var(--border-default); margin: 2rem 0; }
 

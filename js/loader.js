@@ -156,7 +156,11 @@
     // Build sections HTML
     var sectionsHtml = '';
     if (data.content) {
-      sectionsHtml = data.content;
+      if (typeof marked !== 'undefined' && typeof marked.parse === 'function') {
+        sectionsHtml = marked.parse(data.content);
+      } else {
+        sectionsHtml = data.content;
+      }
     } else if (sections.length > 0) {
       sectionsHtml = sections.map(function(s) {
         var sTitle = s.title || '';
