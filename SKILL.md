@@ -14,7 +14,7 @@ metadata:
 
 ## Overview
 
-This skill encodes the complete system design methodology from the [System Design Primer](https://github.com/donnemartin/system-design-primer) — the definitive open-source reference (250k+ stars). Use it to produce **production-quality architectural blueprints** with explicit trade-off reasoning, capacity math, and component-level detail.
+This skill encodes an enterprise-grade distributed systems design methodology. Use it to produce **production-quality architectural blueprints** with explicit trade-off reasoning, capacity math, and component-level detail.
 
 **Core axiom**: *Everything is a trade-off.* Every decision must name what you gain and what you sacrifice.
 
@@ -47,7 +47,7 @@ Ask or state the following before drawing anything:
 - Out-of-scope items (state what you're NOT building)
 
 **Non-functional requirements** (quality attributes):
-- Scale targets: DAU, MAU, RPS (reads + writes separately)
+- Scale targets: DAU, MAU, RPS (e.g., 100k RPS peak, reads + writes separately)
 - Latency SLA: p50/p99 targets (e.g., "timeline loads < 200ms p99")
 - Availability SLA: 99.9%, 99.99%, 99.999%?
 - Consistency model: strong, eventual, or read-your-writes?
@@ -428,4 +428,3 @@ Structure every system design response as:
 - `references/object-oriented-design.md` -- Low-level object-oriented design patterns & code examples (LRU Cache, Parking Lot, Hash Map)
 - `references/api-design-and-protocols.md` -- API design best practices, pagination, idempotency, REST/GraphQL/gRPC
 - `references/data-engineering-and-modern-arch.md` -- Stream vs Batch, Data Lakes, CDC (Debezium), Serverless vs Containers
-- Source: https://github.com/donnemartin/system-design-primer (donnemartin, MIT License)
