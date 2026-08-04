@@ -6,7 +6,7 @@ author: Kallol Chakraborty
 license: MIT
 metadata:
   hermes:
-    tags: [system-design, architecture, scalability, distributed-systems, databases, caching, microservices]
+    tags: [system-design, architecture, scalability, distributed-systems, databases, caching, microservices, sap-btp, clean-core, cap, rap, integration-suite]
     related_skills: [architecture-diagram, spike, plan, requesting-code-review, excalidraw]
 ---
 
@@ -38,6 +38,7 @@ These guardrails are **non-negotiable enforcement rules**. Violating any of them
 | G-08 | Skipping the observability plan | No production design is complete without named metrics, logging, and tracing tooling |
 | G-09 | Using placeholder language: "we can add X later", "this could be scaled", "a suitable database", "some caching layer" | Deferring specificity defeats the purpose of architectural design |
 | G-10 | Producing a design with no failure-mode analysis for the database tier | Database failures are the most common production outages; they must always be addressed |
+| G-11 | Designing SAP extensions that modify the core directly instead of using side-by-side (BTP) or in-app (ABAP Cloud) extensibility | Violates SAP's Clean Core strategy, creating technical debt and blocking upgrades |
 
 ### ✅ Mandatory Quality Requirements (MUST be present in every output)
 
@@ -529,3 +530,4 @@ Structure every system design response as:
 - `references/object-oriented-design.md` -- Low-level object-oriented design patterns & code examples (LRU Cache, Parking Lot, Hash Map)
 - `references/api-design-and-protocols.md` -- API design best practices, pagination, idempotency, REST/GraphQL/gRPC
 - `references/data-engineering-and-modern-arch.md` -- Stream vs Batch, Data Lakes, CDC (Debezium), Serverless vs Containers
+- `references/sap-architectures.md` -- SAP Clean Core strategy, SAP BTP Side-by-side extensibility, SAP Integration Suite, and Identity Propagation
