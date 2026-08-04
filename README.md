@@ -187,7 +187,8 @@ The framework is tested and compatible with major AI agent platforms and LLM orc
 
 | Environment / Platform | Compatibility Status | Skill Loading Strategy |
 |---|---|---|
-| **Anthropic Claude** | ✅ Fully Supported | System Prompt / Custom Tool Skill Index |
+| **Google Gemini Agent** | ✅ Fully Supported | Antigravity SDK / AI Logic |
+| **Agentic AI Model** | ✅ Fully Supported | System Prompt / Custom Tool Skill Index |
 | **Google Antigravity SDK** | ✅ Fully Supported | Auto-discovered via `~/.gemini/config/skills` |
 | **Hermes Agent Framework** | ✅ Fully Supported | Auto-discovered via `~/.hermes/skills` |
 | **OpenCode / OpenAI Codex** | ✅ Fully Supported | Project-Local `.agents/skills` |
@@ -197,7 +198,7 @@ The framework is tested and compatible with major AI agent platforms and LLM orc
 
 ## 7. Evaluation Engine & Quality Benchmark Scorecard
 
-The repository includes a v2.0 Industry-Grade Evaluation Harness (`scripts/run_evals.py`) modeling standards from Anthropic, Stanford HELM, RAGAS, LangChain, and ISO/IEC 25010.
+The repository includes a v2.0 Industry-Grade Evaluation Harness (`scripts/run_evals.py`) modeling standards from Agentic AI frameworks, Stanford HELM, RAGAS, LangChain, and ISO/IEC 25010.
 
 ```bash
 # Execute full 10-suite evaluation harness
@@ -208,16 +209,16 @@ python3 scripts/run_evals.py
 
 | Suite | Category | Benchmark Standard | Tested Metric | Score | Status |
 |---|---|---|---|---|---|
-| **Suite 1** | Frontmatter & Prompt Signal | Anthropic Skill Spec | Frontmatter schema, description $\le 1024$ chars, trigger front-loaded | 27 / 27 pts | ✅ PASS |
-| **Suite 2** | Trigger Recall & Precision | HELM (Stanford) | F1 Score = 1.000 (100% Recall, 100% Precision across test prompts) | 35 / 35 pts | ✅ PASS |
+| **Suite 1** | Frontmatter \& Prompt Signal | Agentic Skill Spec | Frontmatter schema, description $\le 1024$ chars, trigger front-loaded | 27 / 27 pts | ✅ PASS |
+| **Suite 2** | Trigger Recall \& Precision | HELM (Stanford) | F1 Score = 1.000 (100% Recall, 100% Precision across test prompts) | 35 / 35 pts | ✅ PASS |
 | **Suite 3** | Structural Completeness | LangChain Agent Eval | Sequential 4 steps, completion criteria, HLD flow, anti-patterns | 48 / 48 pts | ✅ PASS |
 | **Suite 4** | Content Coverage Matrix | RAGAS Framework | 15/15 technical domains covered (100% domain coverage) | 50 / 50 pts | ✅ PASS |
-| **Suite 5** | Instruction Quality & Anti-Vagueness | ISO/IEC 25010 | Low vague density, 21 prohibitive directives, verifiable criteria | 31 / 31 pts | ✅ PASS |
-| **Suite 6** | Reference & Link Integrity | Anthropic Skill Spec | 100% reference links resolve, well-formed external URLs | 19 / 19 pts | ✅ PASS |
-| **Suite 7** | Code AST & Safety Verification | OWASP & Python AST | 5 Python blocks syntax valid, zero dangerous/destructive patterns | 25 / 25 pts | ✅ PASS |
-| **Suite 8** | Redundancy & Duplication | RAGAS Faithfulness | Zero duplicate headers, zero duplicate paragraphs, no latency overlap | 18 / 18 pts | ✅ PASS |
-| **Suite 9** | Readability & Cognitive Load | Flesch-Kincaid / UX | FK Grade 11.4, section lines $\le 100$, scannable bullet points | 16 / 16 pts | ✅ PASS |
-| **Suite 10** | Token & Context Budget | Anthropic Budget Spec | SKILL.md 19.8k chars, total KB 62.2 KB, 15.1% info density | 31 / 31 pts | ✅ PASS |
+| **Suite 5** | Instruction Quality \& Anti-Vagueness | ISO/IEC 25010 | Low vague density, 21 prohibitive directives, verifiable criteria | 31 / 31 pts | ✅ PASS |
+| **Suite 6** | Reference \& Link Integrity | Agentic Skill Spec | 100% reference links resolve, well-formed external URLs | 19 / 19 pts | ✅ PASS |
+| **Suite 7** | Code AST \& Safety Verification | OWASP \& Python AST | 5 Python blocks syntax valid, zero dangerous/destructive patterns | 25 / 25 pts | ✅ PASS |
+| **Suite 8** | Redundancy \& Duplication | RAGAS Faithfulness | Zero duplicate headers, zero duplicate paragraphs, no latency overlap | 18 / 18 pts | ✅ PASS |
+| **Suite 9** | Readability \& Cognitive Load | Flesch-Kincaid / UX | FK Grade 11.4, section lines $\le 100$, scannable bullet points | 16 / 16 pts | ✅ PASS |
+| **Suite 10** | Token \& Context Budget | Agentic Budget Spec | SKILL.md 19.8k chars, total KB 62.2 KB, 15.1% info density | 31 / 31 pts | ✅ PASS |
 | **TOTAL** | **Overall Evaluation Score** | **Industry Production Standard** | **All 60 test assertions passed** | **300 / 300 pts (100.0%)** | **🏆 PASS** |
 
 ---

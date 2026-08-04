@@ -6,7 +6,7 @@ system-architect — Distributed Systems Design Skill
 ============================================================
 
 Evaluation suites modeled after:
-  - Anthropic Skill Evaluation Framework
+  - Agentic Skill Evaluation Framework
   - HELM (Holistic Evaluation of Language Models) — Stanford
   - RAGAS (Retrieval-Augmented Generation Assessment)
   - LangChain Agent Eval Checklist
@@ -556,7 +556,7 @@ def main():
     print(f"{BOLD}{'='*62}{RESET}")
     print(f"{BOLD}  🧪 INDUSTRY-GRADE SKILL EVALUATION HARNESS v2.0{RESET}")
     print(f"{BOLD}  Skill: system-architect{RESET}")
-    print(f"{BOLD}  Standard: Anthropic / HELM / RAGAS / ISO-25010{RESET}")
+    print(f"{BOLD}  Standard: Agentic Framework / HELM / RAGAS / ISO-25010{RESET}")
     print(f"{BOLD}{'='*62}{RESET}")
 
     try:
