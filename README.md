@@ -7,7 +7,7 @@
 [![Eval Score: 100%](https://img.shields.io/badge/Eval%20Score-300%2F300%20%28100%25%29-brightgreen.svg?style=flat-square)]()
 [![CI/CD Validation: Passing](https://img.shields.io/badge/CI%2FCD%20Validation-Passing-success.svg?style=flat-square)]()
 
-The **System Architect** framework is an enterprise-grade distributed systems design engine engineered for Large Language Models (LLMs), Principal Software Architects, and Autonomous AI Coding Agents. It provides a standardized, mathematically rigorous methodology for designing scalable, fault-tolerant, high-throughput software architectures—from high-level cloud topologies and SAP enterprise integrations down to low-level object-oriented design patterns, database sharding strategies, API contracts, and data pipelines.
+The **System Architect** framework is an enterprise-grade distributed systems design engine engineered for Large Language Models (LLMs), Principal Software Architects, and Autonomous AI Coding Agents. It provides a standardized, mathematically rigorous methodology for designing scalable, fault-tolerant, high-throughput software architectures—from high-level cloud topologies down to low-level object-oriented design patterns, database sharding strategies, API contracts, and data pipelines.
 
 ---
 
@@ -28,7 +28,6 @@ The **System Architect** framework is an enterprise-grade distributed systems de
   - [Module 4: Low-Level Design (LLD) \& OOP Patterns](#module-4-low-level-design-lld--oop-patterns)
   - [Module 5: API Design, Protocols \& Gateway Architectures](#module-5-api-design-protocols--gateway-architectures)
   - [Module 6: Data Engineering, CDC \& Cloud-Native Compute](#module-6-data-engineering-cdc--cloud-native-compute)
-  - [Module 7: SAP Enterprise Architecture \& BTP Cloud Blueprints](#module-7-sap-enterprise-architecture--btp-cloud-blueprints)
 - [5. Advanced Distributed Design Patterns](#5-advanced-distributed-design-patterns)
 - [6. Enterprise Environment Compatibility Matrix](#6-enterprise-environment-compatibility-matrix)
 - [7. Evaluation Engine \& Quality Benchmark Scorecard](#7-evaluation-engine--quality-benchmark-scorecard)
@@ -82,8 +81,7 @@ System Design Skill/
 │   ├── worked-examples.md              # 8 canonical end-to-end architectures (Twitter, Bit.ly, etc.)
 │   ├── object-oriented-design.md        # LLD code implementations (LRU Cache, Parking Lot, Hash Map)
 │   ├── api-design-and-protocols.md      # REST vs gRPC vs GraphQL, Idempotency, Cursor Pagination
-│   ├── data-engineering-and-modern-arch.md # Batch vs Stream, CDC (Debezium), Data Lakes, Serverless vs K8s
-│   └── sap-architectures.md             # SAP Clean Core, SAP BTP CAP/RAP, Event Mesh, Identity Propagation
+│   └── data-engineering-and-modern-arch.md # Batch vs Stream, CDC (Debezium), Data Lakes, Serverless vs K8s
 ├── .gitignore                           # System and IDE exclusion rules
 ├── LICENSE                              # Open-source MIT License
 ├── README.md                            # Professional Master System Design Documentation
@@ -159,7 +157,6 @@ The skill delegates technical specialization to 6 modular reference documents:
 | [`references/object-oriented-design.md`](file:///Users/kallolchakraborty/System%20Design%20Skill/references/object-oriented-design.md) | Low-Level Design (LLD) & OOP | SOLID principles, runnable Python implementations for Thread-Safe LRU Cache, Parking Lot System, HashMap with chaining. |
 | [`references/api-design-and-protocols.md`](file:///Users/kallolchakraborty/System%20Design%20Skill/references/api-design-and-protocols.md) | API Contracts & Gateway Design | REST standards, Cursor vs. Offset pagination, Idempotency key implementation, gRPC/GraphQL/WebSocket comparisons, BFF pattern. |
 | [`references/data-engineering-and-modern-arch.md`](file:///Users/kallolchakraborty/System%20Design%20Skill/references/data-engineering-and-modern-arch.md) | Data Engineering & Cloud Compute | Stream vs. Batch, Lambda/Kappa architecture, Data Lakehouse, Change Data Capture (Debezium), Serverless vs. Kubernetes vs. VMs. |
-| [`references/sap-architectures.md`](file:///Users/kallolchakraborty/System%20Design%20Skill/references/sap-architectures.md) | SAP Enterprise Architecture & BTP | Clean Core, SAP BTP (CAP/RAP), Event Mesh, Integration Suite, Hyperscaler Integration (AWS/Azure), Principal Propagation. |
 
 ---
 

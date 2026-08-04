@@ -272,7 +272,6 @@ def suite_4():
         "Low-Level Design (LLD)":              ["solid", "lru cache", "hash map", "design pattern", "singleton", "observer"],
         "Consistent Hashing":                  ["consistent hashing", "virtual node", "ring", "hash ring"],
         "Capacity Estimation":                 ["writes/sec", "reads/sec", "throughput", "back-of-the-envelope", "pareto"],
-        "SAP Architecture & BTP":              ["sap btp", "clean core", "event mesh", "principal propagation", "side-by-side", "abap", "integration suite"],
     }
 
     covered = 0
