@@ -16,6 +16,7 @@ The **System Architect** framework is an enterprise-grade distributed systems de
 - [1. Executive Overview \& System Engineering Axioms](#1-executive-overview--system-engineering-axioms)
 - [2. Repository Architecture \& Directory Taxonomy](#2-repository-architecture--directory-taxonomy)
 - [3. The 4-Step Production System Design Methodology](#3-the-4-step-production-system-design-methodology)
+  - [Behavioral \& Quality Guardrails (MANDATORY)](#behavioral--quality-guardrails-mandatory)
   - [Step 1: Requirements Formulation \& SLA Boundaries](#step-1-requirements-formulation--sla-boundaries)
   - [Step 2: Capacity Estimation \& Mathematical Modeling](#step-2-capacity-estimation--mathematical-modeling)
   - [Step 3: High-Level Topology Design](#step-3-high-level-topology-design)
@@ -91,7 +92,16 @@ System Design Skill/
 
 ## 3. The 4-Step Production System Design Methodology
 
-Every architecture query processed by an agent utilizing this skill strictly follows a 4-step sequence:
+### Behavioral & Quality Guardrails (MANDATORY)
+
+Every architecture query processed by an agent utilizing this skill strictly enforces non-negotiable quality rules:
+
+- **Hard Prohibitions (G-01 to G-10)**: Strict bans on brand-name tech picking without justification, generic caching/queuing advice, designs with $<3$ trade-offs, skipping capacity math, unaddressed SPOFs, vague consistency descriptions, missing observability plans, and deferral language.
+- **Mandatory Quality Requirements**: Every output must contain explicit numbered capacity calculations, per-component technical justifications, a trade-off summary matrix, failure-mode walkthroughs, CAP theorem positions, concrete schemas/contracts, and a 3-component bottleneck forecast.
+- **Vagueness Detection & Anti-Pattern Rules**: Standardized replacement rules for imprecise language (e.g. replacing "use a cache" with specific system, strategy, TTL, eviction, invalidation owner, and thundering-herd mitigation).
+- **Self-Audit Enforcement Protocol**: Agents perform an automated internal audit before outputting to verify all guardrails are met.
+
+---
 
 ### Step 1: Requirements Formulation & SLA Boundaries
 - **Functional Requirements**: Enumerate explicit user capabilities and system outputs. Define out-of-scope boundaries to prevent scope creep.
