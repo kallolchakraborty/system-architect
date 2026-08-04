@@ -157,6 +157,7 @@ The skill delegates technical specialization to 6 modular reference documents:
 | [`references/object-oriented-design.md`](file:///Users/kallolchakraborty/System%20Design%20Skill/references/object-oriented-design.md) | Low-Level Design (LLD) & OOP | SOLID principles, runnable Python implementations for Thread-Safe LRU Cache, Parking Lot System, HashMap with chaining. |
 | [`references/api-design-and-protocols.md`](file:///Users/kallolchakraborty/System%20Design%20Skill/references/api-design-and-protocols.md) | API Contracts & Gateway Design | REST standards, Cursor vs. Offset pagination, Idempotency key implementation, gRPC/GraphQL/WebSocket comparisons, BFF pattern. |
 | [`references/data-engineering-and-modern-arch.md`](file:///Users/kallolchakraborty/System%20Design%20Skill/references/data-engineering-and-modern-arch.md) | Data Engineering & Cloud Compute | Stream vs. Batch, Lambda/Kappa architecture, Data Lakehouse, Change Data Capture (Debezium), Serverless vs. Kubernetes vs. VMs. |
+| [`references/sap-architecture-guidelines.md`](file:///Users/kallolchakraborty/System%20Design%20Skill/references/sap-architecture-guidelines.md) | SAP BTP & Integration (ISA-M) | Clean Core principles, SAP CAP/RAP models, SAP Event Mesh, Multi-cloud integration with Hyperscalers, Generative AI Hub on SAP. |
 
 ---
 

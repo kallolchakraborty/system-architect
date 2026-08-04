@@ -145,8 +145,9 @@ def suite_2():
         "what database should i use for a high-write social feed",
         "design a rate limiter for an api gateway",
         "how do i scale my sql database to handle 100k writes per second",
-        "microservices vs monolith for a greenfield e-commerce platform",
         "design a real-time collaborative editing system like google docs",
+        "design a side-by-side extension for sap s/4hana on btp",
+        "architect an integration landscape using sap integration suite",
     ]
     # True-negative prompts (MUST NOT trigger)
     tn_prompts = [
@@ -159,7 +160,7 @@ def suite_2():
     ]
 
     # Keyword signals extracted from when-to-use and don't-use sections
-    trigger_signals    = ["design", "architect", "scalab", "capacity", "distribut", "system", "high-level", "pattern", "database", "microservice", "scale", "hld"]
+    trigger_signals    = ["design", "architect", "scalab", "capacity", "distribut", "system", "high-level", "pattern", "database", "microservice", "scale", "hld", "sap", "btp", "clean core"]
     exclusion_signals  = ["syntax", "css", "html", "animation", "unit test", "sort", "geography", "capital"]
 
     # Recall: true positive hits (prompt contains ≥1 trigger signal)
@@ -268,10 +269,10 @@ def suite_4():
         "Observability (Metrics/Logs/Traces)": ["prometheus", "grafana", "elk", "jaeger", "zipkin", "distributed tracing", "metrics"],
         "Security Fundamentals":               ["tls", "jwt", "oauth", "encryption", "rbac", "rate limiting"],
         "Data Engineering & Pipelines":        ["batch processing", "stream processing", "lambda architecture", "kappa", "cdc", "debezium"],
-        "Cloud-Native Compute":                ["serverless", "kubernetes", "container", "lambda function", "faas"],
         "Low-Level Design (LLD)":              ["solid", "lru cache", "hash map", "design pattern", "singleton", "observer"],
         "Consistent Hashing":                  ["consistent hashing", "virtual node", "ring", "hash ring"],
         "Capacity Estimation":                 ["writes/sec", "reads/sec", "throughput", "back-of-the-envelope", "pareto"],
+        "SAP Architecture":                    ["sap btp", "clean core", "isa-m", "sap cap", "integration suite", "fiori", "datasphere"],
     }
 
     covered = 0

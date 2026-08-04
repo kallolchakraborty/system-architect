@@ -6,7 +6,7 @@ author: Kallol Chakraborty
 license: MIT
 metadata:
   hermes:
-    tags: [system-design, architecture, scalability, distributed-systems, databases, caching, microservices]
+    tags: [system-design, architecture, scalability, distributed-systems, databases, caching, microservices, sap, btp, clean-core, isa-m, fiori]
     related_skills: [architecture-diagram, spike, plan, requesting-code-review, excalidraw]
 ---
 
@@ -84,6 +84,7 @@ If any violation is found, **fix it before outputting** — do not disclose the 
 
 - User asks to "design a system for X" (URL shortener, social feed, search engine, ride-sharing, etc.)
 - User needs a scalability review of an existing architecture
+- User wants to design an SAP BTP reference architecture, Clean Core extension, or SAP Integration Suite landscape
 - User wants to choose between architectural patterns (microservices vs monolith, SQL vs NoSQL, etc.)
 - User is preparing for a system design interview or architectural review board
 - User is building a greenfield complex application and needs architectural guidance
@@ -167,6 +168,7 @@ For each component, justify its presence. If you include a cache, say WHY (read-
 - [ ] Load balancer type and algorithm
 - [ ] API gateway / reverse proxy (rate limiting, auth, SSL termination)
 - [ ] Application tier: monolith vs microservices decision (with rationale)
+- [ ] SAP Extensibility: In-App vs Side-by-Side (Clean Core), ISA-M pattern for integration
 - [ ] Caching tier: where (client, CDN, app, DB) and what strategy
 - [ ] Primary database choice (relational vs NoSQL -- which type)
 - [ ] Async processing: message queue if any write fan-out > 10x
@@ -529,3 +531,4 @@ Structure every system design response as:
 - `references/object-oriented-design.md` -- Low-level object-oriented design patterns & code examples (LRU Cache, Parking Lot, Hash Map)
 - `references/api-design-and-protocols.md` -- API design best practices, pagination, idempotency, REST/GraphQL/gRPC
 - `references/data-engineering-and-modern-arch.md` -- Stream vs Batch, Data Lakes, CDC (Debezium), Serverless vs Containers
+- `references/sap-architecture-guidelines.md` -- SAP BTP Reference Architectures, Clean Core principles, ISA-M integration patterns, and AI-native North Star architecture
